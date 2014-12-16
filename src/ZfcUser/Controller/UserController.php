@@ -55,11 +55,6 @@ class UserController extends AbstractActionController
     protected $failedLoginMessage = 'Authentication failed. Please try again.';
 
     /**
-     * @var string
-     */
-    protected $loginNamespace = 'zfcuser-login-form';
-
-    /**
      * @var UserControllerOptionsInterface
      */
     protected $options;
@@ -96,7 +91,7 @@ class UserController extends AbstractActionController
         $post    = $request->getPost();
 
         $form    = $this->loginForm;
-        $fm = $this->flashMessenger()->setNamespace($this->loginNamespace)->getMessages();
+        $fm = $this->flashMessenger()->setNamespace('zfcuser-login-form')->getMessages();
         if (isset($fm[0])) {
             $this->loginForm->setMessages(
                 array('identity' => array($fm[0]))
@@ -120,7 +115,7 @@ class UserController extends AbstractActionController
         $form->setData($post);
 
         if (!$form->isValid()) {
-            $this->flashMessenger()->setNamespace($this->loginNamespace)->addMessage($this->failedLoginMessage);
+            $this->flashMessenger()->setNamespace('zfcuser-login-form')->addMessage($this->failedLoginMessage);
             return $this->redirect()->toUrl($this->url()->fromRoute(static::ROUTE_LOGIN).($redirect ? '?redirect='. rawurlencode($redirect) : ''));
         }
 
@@ -171,7 +166,7 @@ class UserController extends AbstractActionController
         $auth = $this->zfcUserAuthentication()->getAuthService()->authenticate($adapter);
 
         if (!$auth->isValid()) {
-            $this->flashMessenger()->setNamespace($this->loginNamespace)->addMessage($this->failedLoginMessage);
+            $this->flashMessenger()->setNamespace('zfcuser-login-form')->addMessage($this->failedLoginMessage);
             $adapter->resetAdapters();
             return $this->redirect()->toUrl(
                 $this->url()->fromRoute(static::ROUTE_LOGIN) .

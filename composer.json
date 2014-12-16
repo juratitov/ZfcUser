@@ -1,5 +1,5 @@
 {
-    "name": "zf-commons/zfc-user",
+    "name": "juratitov/zfc-user",
     "description": "A generic user registration and authentication module for ZF2. Supports multiple adapters with built-in support for Zend\\Db.",
     "type": "library",
     "license": "BSD-3-Clause",

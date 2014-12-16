@@ -24,7 +24,7 @@ class Login extends ProvidesEventsForm
                 'label' => '',
             ),
             'attributes' => array(
-                'type' => 'text'
+                'type' => 'text',
             ),
         ));
 
@@ -59,7 +59,9 @@ class Login extends ProvidesEventsForm
         $submitElement
             ->setLabel('Sign In')
             ->setAttributes(array(
-                'type'  => 'submit',
+                'type'  => 'submit', 
+                'class' => 'btn btn-default'
+                
             ));
 
         $this->add($submitElement, array(

@@ -75,7 +75,7 @@ class User extends EventProvider implements ServiceManagerAwareInterface
             $events->trigger(__FUNCTION__.'.post', $this, compact('user', 'form'));
 
             return $user;
-        }
+        }        
         return false;
     }
 
