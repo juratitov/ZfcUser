@@ -30,6 +30,16 @@ class Base extends ProvidesEventsForm
                 'type' => 'text'
             ),
         ));
+        
+        $this->add(array(
+            'name' => 'phone',
+            'options' => array(
+                'label' => 'Phone',
+            ),
+            'attributes' => array(
+                'type' => 'text'
+            ),
+        ));
 
         $this->add(array(
             'name' => 'display_name',

@@ -17,6 +17,11 @@ class User implements UserInterface
     /**
      * @var string
      */
+    protected $phone;
+
+    /**
+     * @var string
+     */
     protected $email;
 
     /**
@@ -75,6 +80,28 @@ class User implements UserInterface
     public function setUsername($username)
     {
         $this->username = $username;
+        return $this;
+    }
+    
+    /**
+     * Get username.
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set username.
+     *
+     * @param string $username
+     * @return UserInterface
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
         return $this;
     }
 

@@ -245,6 +245,8 @@ class UserController extends AbstractActionController
                 $post['identity'] = $user->getEmail();
             } elseif (in_array('username', $identityFields)) {
                 $post['identity'] = $user->getUsername();
+            } elseif (in_array('phone', $identityFields)) {
+                $post['identity'] = $user->getPhone();
             }
             $post['credential'] = $post['password'];
             $request->setPost(new Parameters($post));

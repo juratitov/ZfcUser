@@ -75,6 +75,9 @@ class Db extends AbstractAdapter implements ServiceManagerAwareInterface
                 case 'email':
                     $userObject = $this->getMapper()->findByEmail($identity);
                     break;
+                case 'phone':
+                    $userObject = $this->getMapper()->findByEmail($identity);
+                    break;
             }
         }
 

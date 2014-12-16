@@ -5,6 +5,8 @@ namespace ZfcUser\Mapper;
 interface UserInterface
 {
     public function findByEmail($email);
+    
+    public function findByPhone($phone);
 
     public function findByUsername($username);
 

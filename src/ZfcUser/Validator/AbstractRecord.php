@@ -107,6 +107,10 @@ abstract class AbstractRecord extends AbstractValidator
             case 'username':
                 $result = $this->getMapper()->findByUsername($value);
                 break;
+            
+            case 'phone':
+                $result = $this->getMapper()->findByPhone($value);
+                break;
 
             default:
                 throw new \Exception('Invalid key used in ZfcUser validator');

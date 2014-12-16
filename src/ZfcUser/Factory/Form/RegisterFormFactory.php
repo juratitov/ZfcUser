@@ -29,6 +29,11 @@ class RegisterFormFactory implements FactoryInterface
             'mapper' => $userMapper,
             'key' => 'username',
         ));
+        
+        $phoneValidator = new NoRecordExists(array(
+            'mapper' => $userMapper,
+            'key' => 'phone',
+        ));
 
         $inputFilter = new RegisterFilter(
             $emailValidator,

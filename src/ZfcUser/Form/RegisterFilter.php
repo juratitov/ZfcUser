@@ -18,17 +18,24 @@ class RegisterFilter extends ProvidesEventsInputFilter
      * @var ValidatorInterface
      */
     protected $usernameValidator;
+   
+    /**
+     * @var ValidatorInterface
+     */
+    protected $phoneValidator;
+   
 
     /**
      * @var RegistrationOptionsInterface
      */
     protected $options;
 
-    public function __construct(ValidatorInterface $emailValidator, ValidatorInterface $usernameValidator, RegistrationOptionsInterface $options)
+    public function __construct(ValidatorInterface $emailValidator, ValidatorInterface $usernameValidator, ValidatorInterface $phoneValidator, RegistrationOptionsInterface $options)
     {
         $this->setOptions($options);
         $this->emailValidator = $emailValidator;
         $this->usernameValidator = $usernameValidator;
+        $this->phoneValidator = $phoneValidator;
 
         if ($this->getOptions()->getEnableUsername()) {
             $this->add(array(
@@ -56,6 +63,16 @@ class RegisterFilter extends ProvidesEventsInputFilter
                         'name' => 'EmailAddress'
                     ),
                     $this->emailValidator
+                ),
+            ));
+        }
+        
+        if ($this->getOptions()->getEnablePhone()) {
+            $this->add(array(
+                'name' => 'phone',
+                'required' => true,
+                'validators' => array(                    
+                    $this->phoneValidator
                 ),
             ));
         }
@@ -134,6 +151,18 @@ class RegisterFilter extends ProvidesEventsInputFilter
     public function setUsernameValidator($usernameValidator)
     {
         $this->usernameValidator = $usernameValidator;
+
+        return $this;
+    }
+    
+    public function getPhoneValidator()
+    {
+        return $this->phoneValidator;
+    }
+
+    public function setPhoneValidator($phoneValidator)
+    {
+        $this->phoneValidator = $phoneValidator;
 
         return $this;
     }

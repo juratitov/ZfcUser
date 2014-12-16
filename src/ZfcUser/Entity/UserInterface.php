@@ -17,7 +17,13 @@ interface UserInterface
      * @return string
      */
     public function getUsername();
-
+    
+    /**
+     * Get username.
+     *
+     * @return string
+     */
+    public function getPhone();
     /**
      * Get email.
      *
