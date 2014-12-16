@@ -38,6 +38,7 @@ class RegisterFormFactory implements FactoryInterface
         $inputFilter = new RegisterFilter(
             $emailValidator,
             $userNameValidator,
+            $phoneValidator,
             $options
         );
 
