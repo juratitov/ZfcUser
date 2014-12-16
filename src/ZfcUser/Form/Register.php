@@ -27,6 +27,9 @@ class Register extends Base
         if (!$this->getRegistrationOptions()->getEnableEmail()) {
             $this->remove('email');
         }
+        if (!$this->getRegistrationOptions()->getEnablePhone()) {
+            $this->remove('phone');
+        }
         if (!$this->getRegistrationOptions()->getEnableDisplayName()) {
             $this->remove('display_name');
         }

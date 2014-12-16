@@ -41,6 +41,26 @@ $settings = array(
      * Accepted values: boolean true or false
      */
     //'enable_username' => false,
+    
+    /**
+     * Enable Email
+     *
+     * Enables Email field on the registration form, and allows users to log
+     * in using their username OR email address. Default is false.
+     *
+     * Accepted values: boolean true or false
+     */
+    //'enable_email' => false,
+    
+    /**
+     * Enable Phone
+     *
+     * Enables Phone field on the registration form, and allows users to log
+     * in using their Phone OR email address. Default is false.
+     *
+     * Accepted values: boolean true or false
+     */
+    //'enable_phone' => false,
 
     /**     
      * Authentication Adapters

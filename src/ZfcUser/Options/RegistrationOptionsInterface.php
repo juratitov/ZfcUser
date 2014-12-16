@@ -4,6 +4,7 @@ namespace ZfcUser\Options;
 
 interface RegistrationOptionsInterface
 {
+
     /**
      * set enable display name
      *
@@ -47,7 +48,7 @@ interface RegistrationOptionsInterface
      * @return bool
      */
     public function getEnableUsername();
-    
+
     /**
      * set enable username
      *
@@ -62,6 +63,21 @@ interface RegistrationOptionsInterface
      * @return bool
      */
     public function getEnableEmail();
+
+    /**
+     * set enable username
+     *
+     * @param bool $flag
+     * @return ModuleOptions
+     */
+    public function setEnablePhone($enablePhone);
+
+    /**
+     * get enable username
+     *
+     * @return bool
+     */
+    public function getEnablePhone();
 
     /**
      * set user form timeout in seconds

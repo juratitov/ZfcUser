@@ -6,6 +6,7 @@ use Zend\Stdlib\AbstractOptions;
 
 class ModuleOptions extends AbstractOptions implements UserControllerOptionsInterface, UserServiceOptionsInterface
 {
+
     /**
      * Turn off strict options mode
      */
@@ -54,17 +55,17 @@ class ModuleOptions extends AbstractOptions implements UserControllerOptionsInte
     /**
      * @var Array
      */
-    protected $allowedLoginStates = array( null, 1 );
+    protected $allowedLoginStates = array(null, 1);
 
     /**
      * @var array
      */
-    protected $authAdapters = array( 100 => 'ZfcUser\Authentication\Adapter\Db' );
+    protected $authAdapters = array(100 => 'ZfcUser\Authentication\Adapter\Db');
 
     /**
      * @var array
      */
-    protected $authIdentityFields = array( 'email' );
+    protected $authIdentityFields = array('email');
 
     /**
      * @var string
@@ -85,11 +86,16 @@ class ModuleOptions extends AbstractOptions implements UserControllerOptionsInte
      * @var bool
      */
     protected $enableUsername = false;
-    
+
     /**
      * @var bool
      */
     protected $enableEmail = false;
+
+    /**
+     * @var bool
+     */
+    protected $enablePhone = false;
 
     /**
      * @var bool
@@ -104,9 +110,7 @@ class ModuleOptions extends AbstractOptions implements UserControllerOptionsInte
     /**
      * @var string
      */
-
     protected $tableName = 'user';
-
 
     /**
      * set login redirect route
@@ -415,6 +419,7 @@ class ModuleOptions extends AbstractOptions implements UserControllerOptionsInte
     {
         return $this->enableUsername;
     }
+
     /**
      * set enable username
      *
@@ -435,6 +440,28 @@ class ModuleOptions extends AbstractOptions implements UserControllerOptionsInte
     public function getEnableEmail()
     {
         return $this->enableEmail;
+    }
+
+    /**
+     * set enable username
+     *
+     * @param bool $flag
+     * @return ModuleOptions
+     */
+    public function setEnablePhone($flag)
+    {
+        $this->enablePhone = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * get enable username
+     *
+     * @return bool
+     */
+    public function getEnablePhone()
+    {
+        return $this->enablePhone;
     }
 
     /**
@@ -510,7 +537,7 @@ class ModuleOptions extends AbstractOptions implements UserControllerOptionsInte
      */
     public function setTableName($tableName)
     {
-        $this->tableName=$tableName;
+        $this->tableName = $tableName;
     }
 
     /**
@@ -522,4 +549,5 @@ class ModuleOptions extends AbstractOptions implements UserControllerOptionsInte
     {
         return $this->tableName;
     }
+
 }
