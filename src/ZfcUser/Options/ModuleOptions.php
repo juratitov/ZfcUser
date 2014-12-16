@@ -85,6 +85,11 @@ class ModuleOptions extends AbstractOptions implements UserControllerOptionsInte
      * @var bool
      */
     protected $enableUsername = false;
+    
+    /**
+     * @var bool
+     */
+    protected $enableEmail = false;
 
     /**
      * @var bool
@@ -409,6 +414,27 @@ class ModuleOptions extends AbstractOptions implements UserControllerOptionsInte
     public function getEnableUsername()
     {
         return $this->enableUsername;
+    }
+    /**
+     * set enable username
+     *
+     * @param bool $flag
+     * @return ModuleOptions
+     */
+    public function setEnableEmail($flag)
+    {
+        $this->enableEmail = (bool) $flag;
+        return $this;
+    }
+
+    /**
+     * get enable username
+     *
+     * @return bool
+     */
+    public function getEnableEmail()
+    {
+        return $this->enableEmail;
     }
 
     /**

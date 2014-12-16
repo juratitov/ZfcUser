@@ -47,6 +47,21 @@ interface RegistrationOptionsInterface
      * @return bool
      */
     public function getEnableUsername();
+    
+    /**
+     * set enable username
+     *
+     * @param bool $flag
+     * @return ModuleOptions
+     */
+    public function setEnableEmail($enableEmail);
+
+    /**
+     * get enable username
+     *
+     * @return bool
+     */
+    public function getEnableEmail();
 
     /**
      * set user form timeout in seconds
